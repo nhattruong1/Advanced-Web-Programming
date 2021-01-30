@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 #{title}
+  h1.text-primary Danh sách sản phẩm
+  button.btn.btn-success(type='button') Thêm sản phẩm
+  p Chọn một sản phẩm cụ thể để xem
+
+  table.table.table-striped
+    thead
+      tr
+        th Stt
+        th Tên sản phẩm
+        th Giá
+        th Thao tác
+    tbody
+      each item in items
+        tr
+          td= item.id
+          td= item.name
+          td= item.price
+          td 
+            a(href="#") Chỉnh sửa 
+            span |
+            a(href="#")  Xoá 
+
+

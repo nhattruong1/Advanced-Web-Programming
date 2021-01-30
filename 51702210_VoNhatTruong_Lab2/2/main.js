@@ -50,17 +50,18 @@ const server = http.createServer((req,res) =>{
         req.on('end', () => {
             let input = queryString.decode(body)
             if(input.email === email && input.password === password){
-                res.end('login success')
+                res.end('login success');
             }else{
-                res.end('login fail')
+                res.end('login fail');
             }
         })
     }else{
-        res.end('Page not found')
+        res.end('Page not found');
     }
 })
 
 
 server.listen(8080,() =>{
+    console.log();
     console.log('server running at localhost:8080')
 })

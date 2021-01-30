@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    if login === false
+        .alert.alert-danger
+            strong Fail!
+            |  Email or password invalid.
+
+    form(action='/login' method='POST')
+        .form-group
+            label(for='email') Email:
+            input#email.form-control(type='email' placeholder='Enter email' name='email')
+        .form-group
+            label(for='pwd') Password:
+            input#pwd.form-control(type='password' placeholder='Enter password' name='password')
+        button.btn.btn-primary(type='submit') Login
